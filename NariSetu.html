@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NariSetu AI — Your Bridge to a Brighter Future</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff3d8d;--purple:#6d35d8;--violet:#9b5cff;--ink:#25183d;--muted:#6f6880;--glass:rgba(255,255,255,.68)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f9f5ff;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-5;overflow:hidden;background:linear-gradient(120deg,#fff3fa,#f0eaff,#ecfff8,#fff7df);background-size:300% 300%;animation:gradient 14s ease infinite}
+.blob{position:absolute;border-radius:50%;filter:blur(4px);opacity:.35;animation:float 9s ease-in-out infinite}
+.b1{width:330px;height:330px;background:#ff6ba9;left:-100px;top:10%}.b2{width:390px;height:390px;background:#8861ff;right:-130px;top:28%;animation-delay:2s}.b3{width:270px;height:270px;background:#52e0ad;left:30%;bottom:-100px;animation-delay:4s}
+.particles{position:absolute;inset:0}.particle{position:absolute;width:6px;height:6px;border-radius:50%;background:white;box-shadow:0 0 18px #fff;animation:rise linear infinite;opacity:.7}
+@keyframes gradient{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes float{50%{transform:translateY(-35px) scale(1.08)}}
+@keyframes rise{from{transform:translateY(110vh);opacity:0}20%{opacity:.8}to{transform:translateY(-20vh);opacity:0}}
+nav{position:sticky;top:0;z-index:20;margin:14px auto 0;width:min(1180px,94%);padding:12px 18px;border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.62);backdrop-filter:blur(20px);border-radius:22px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 15px 45px #5d347d12}
+.brand{display:flex;align-items:center;gap:11px}.brandmark{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--pink),var(--purple));display:grid;place-items:center;color:#fff;font-size:25px;box-shadow:0 10px 25px #8b38bb45;animation:pulse 2.4s infinite}.brand h2{font-size:20px}.brand h2 span{color:var(--pink)}.brand small{color:var(--muted)}
+.links{display:flex;align-items:center;gap:22px}.links a{color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}.links a:hover{color:var(--pink)}
+select{border:1px solid #e5d9f2;background:#fff9;padding:10px 13px;border-radius:14px;font-weight:700;color:#51316f}
+.hero{width:min(1180px,92%);margin:0 auto;padding:75px 0 55px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff8;border:1px solid #fff;padding:9px 14px;border-radius:99px;color:#7135a5;font-weight:800;box-shadow:0 8px 25px #63378b12}
+h1{font-size:clamp(50px,7vw,88px);line-height:.94;margin:20px 0 16px;letter-spacing:-4px}h1 span{color:var(--pink)}.hero h3{font-size:25px;margin-bottom:16px}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:27px}.btn{border:0;padding:15px 21px;border-radius:16px;font-weight:900;cursor:pointer;transition:.25s}.primary{color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 15px 30px #9138ad38}.secondary{background:#fff8;border:1px solid #fff;color:#57327b}.btn:hover{transform:translateY(-4px) scale(1.02)}
+.hero-card{position:relative;min-height:470px;border-radius:38px;background:linear-gradient(145deg,#ffffffb5,#ffffff55);border:1px solid #ffffffcc;backdrop-filter:blur(22px);box-shadow:0 30px 80px #5d347d20;display:grid;place-items:center;overflow:hidden}
+.orbit{position:absolute;width:330px;height:330px;border:1px dashed #a477d866;border-radius:50%;animation:spin 18s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:45px;height:45px;border-radius:50%;display:grid;place-items:center}.orbit:before{content:"🎓";top:-22px;left:140px;background:#fff}.orbit:after{content:"💼";right:-22px;top:140px;background:#fff}
+.avatar{width:220px;height:220px;border-radius:50%;display:grid;place-items:center;font-size:105px;background:linear-gradient(135deg,#ffb5d5,#d4c3ff);box-shadow:0 25px 60px #6d35d838;animation:bob 3.8s ease-in-out infinite;z-index:2}
+.voice{position:absolute;bottom:27px;display:flex;align-items:center;gap:12px;padding:13px 18px;border-radius:99px;background:#ffffffd9;backdrop-filter:blur(15px);box-shadow:0 12px 35px #6d35d82b;font-weight:800}.mic{width:54px;height:54px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-size:24px;cursor:pointer}.mic.listening{animation:ring 1s infinite}
+@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 0 12px #ff3d8d00}}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes bob{50%{transform:translateY(-12px)}}@keyframes ring{70%{box-shadow:0 0 0 22px #ff3d8d00}}
+.section{width:min(1180px,92%);margin:55px auto}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}.section h2{font-size:36px}.section-head p{color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.service{min-height:205px;padding:22px;border-radius:25px;border:1px solid #fff;background:var(--glass);backdrop-filter:blur(18px);box-shadow:0 18px 45px #4b286d12;transition:.3s;cursor:pointer}.service:hover{transform:translateY(-10px) rotate(.7deg);box-shadow:0 25px 55px #4b286d1f}.icon{font-size:42px}.service h3{margin:14px 0 7px}.service p{font-size:13px;color:var(--muted);line-height:1.55}.go{margin-top:15px;color:var(--purple);font-weight:900}
+.journey{padding:28px;border-radius:30px;background:#ffffff9e;border:1px solid #fff;backdrop-filter:blur(18px);box-shadow:0 20px 55px #4b286d12}.progress{height:13px;background:#eee6f7;border-radius:99px;overflow:hidden;margin:20px 0}.bar{width:68%;height:100%;background:linear-gradient(90deg,var(--pink),var(--purple));border-radius:99px;animation:load 2s ease}.journey-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.journey-item{padding:16px;background:#fff9;border-radius:18px}.journey-item b{display:block;margin-bottom:6px}.done{color:#15956d}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{padding:24px;border-radius:24px;background:linear-gradient(135deg,#fff8,#ffffff5c);border:1px solid #fff;text-align:center;backdrop-filter:blur(15px)}.num{font-size:38px;font-weight:950;color:var(--purple)}.stat p{color:var(--muted)}
+@keyframes load{from{width:0}}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.story-card{padding:34px;border-radius:30px;background:linear-gradient(135deg,#6d35d8,#ff3d8d);color:#fff;box-shadow:0 25px 60px #6d35d82b}.story-card h2{font-size:38px;margin-bottom:14px}.story-card p{line-height:1.75;opacity:.9}.quote{padding:34px;border-radius:30px;background:#ffffffa8;border:1px solid #fff;backdrop-filter:blur(18px);font-size:22px;line-height:1.6;font-weight:800}
+.emergency{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:28px;border-radius:28px;background:linear-gradient(135deg,#fff0f1,#fff);border:1px solid #ffcdd5;box-shadow:0 18px 45px #c6425014}.emergency h2{color:#a51e38}.emergency p{color:var(--muted);margin-top:7px}.helpbtn{background:#b92040;color:#fff;padding:14px 20px;border:0;border-radius:15px;font-weight:900;cursor:pointer}
+.chat{position:fixed;right:22px;bottom:22px;width:min(390px,calc(100% - 30px));z-index:30;border-radius:28px;background:#fffffff0;border:1px solid #fff;backdrop-filter:blur(24px);box-shadow:0 25px 80px #32134b35;overflow:hidden;transform:translateY(calc(100% + 30px));opacity:0;pointer-events:none;transition:.35s}.chat.open{transform:none;opacity:1;pointer-events:auto}.chathead{padding:18px;background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;display:flex;justify-content:space-between;align-items:center}.close{background:#fff3;color:#fff;border:0;border-radius:10px;padding:7px 10px;cursor:pointer}.messages{height:260px;overflow:auto;padding:15px}.msg{padding:11px 14px;border-radius:17px;max-width:85%;margin:7px 0;line-height:1.45}.bot{background:#f0eaff}.user{margin-left:auto;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}.composer{display:flex;gap:8px;padding:12px;border-top:1px solid #eee}.composer input{flex:1;border:1px solid #e6ddf0;border-radius:14px;padding:12px;outline:0}.composer button{border:0;border-radius:14px;padding:0 15px;background:var(--purple);color:#fff;font-size:18px}
+.chat-fab{position:fixed;right:22px;bottom:22px;z-index:29;width:64px;height:64px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-size:25px;cursor:pointer;box-shadow:0 15px 40px #6d35d84d;animation:pulse 2.5s infinite}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);opacity:0;z-index:50;background:#241436;color:#fff;padding:13px 18px;border-radius:14px;transition:.3s;box-shadow:0 15px 35px #0003}.toast.show{transform:translate(-50%,0);opacity:1}
+footer{margin-top:70px;padding:45px 6%;text-align:center;color:#fff;background:linear-gradient(135deg,#28103f,#6d35d8,#a72e78)}footer h2{font-size:30px}footer p{opacity:.82;margin-top:8px}
+@media(max-width:900px){.links a{display:none}.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:auto}.actions{justify-content:center}.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr}.journey-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){nav{margin-top:7px}.brand small{display:none}.hero{padding-top:45px}.hero-card{min-height:390px}.avatar{width:170px;height:170px;font-size:80px}.orbit{width:250px;height:250px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.section h2{font-size:29px}.journey-row{grid-template-columns:1fr}.emergency{grid-template-columns:1fr}.chat{right:10px;bottom:10px}.chat-fab{right:15px;bottom:15px}}
+</style>
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="particles" id="particles"></div></div>
+
+<nav>
+  <div class="brand"><div class="brandmark">🌸</div><div><h2>Nari<span>Setu</span> AI</h2><small>Your bridge to a brighter future</small></div></div>
+  <div class="links">
+    <a href="#services">Services</a><a href="#journey">Journey</a><a href="#story">Our Mission</a><a href="#help">Help</a>
+    <select id="language" aria-label="Language"><option value="en-IN">🌐 English</option><option value="te-IN">తెలుగు</option><option value="hi-IN">हिन्दी</option><option value="ta-IN">தமிழ்</option><option value="kn-IN">ಕನ್ನಡ</option></select>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">✨ Built for every woman • No tech knowledge needed</div>
+    <h1>Nari<span>Setu</span><br>AI</h1>
+    <h3>Your Bridge to a Brighter Future</h3>
+    <p>Tell us what you need. NariSetu makes opportunities, services and support easier to understand—in a language that feels like home.</p>
+    <div class="actions"><button class="btn primary" onclick="openChat()">💬 Talk to NariSetu</button><button class="btn secondary" onclick="startVoice()">🎤 Speak to NariSetu</button></div>
+  </div>
+  <div class="hero-card">
+    <div class="orbit"></div><div class="avatar">👩‍💼</div>
+    <div class="voice"><button class="mic" id="mic" onclick="startVoice()">🎙️</button><span id="voiceStatus">Tap to talk • I’m listening</span></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-head"><div><h2>Everything starts with you 💜</h2><p>Choose a path—or simply tell NariSetu what you need.</p></div></div>
+  <div class="grid">
+    <div class="service" onclick="quick('I want education and scholarship help')"><div class="icon">🎓</div><h3>Education</h3><p>Learning, scholarships, admissions and skill-building.</p><div class="go">Explore →</div></div>
+    <div class="service" onclick="quick('I want job and skill opportunities')"><div class="icon">💼</div><h3>Jobs & Skills</h3><p>Career paths, training and employment guidance.</p><div class="go">Explore →</div></div>
+    <div class="service" onclick="quick('I need women support')"><div class="icon">🌷</div><h3>Women Support</h3><p>Support resources, rights and empowerment information.</p><div class="go">Explore →</div></div>
+    <div class="service" onclick="quick('I need financial help')"><div class="icon">💰</div><h3>Financial Help</h3><p>Understand assistance, savings and livelihood options.</p><div class="go">Explore →</div></div>
+    <div class="service" onclick="quick('I need help finding a service near me')"><div class="icon">📍</div><h3>Find Help</h3><p>Discover the next step and where to seek assistance.</p><div class="go">Explore →</div></div>
+  </div>
+</section>
+
+<section class="section" id="journey">
+  <div class="section-head"><div><h2>Your journey 🌱</h2><p>Small steps can open big opportunities.</p></div><strong>68% complete</strong></div>
+  <div class="journey">
+    <div class="progress"><div class="bar"></div></div>
+    <div class="journey-row">
+      <div class="journey-item"><b class="done">✓ 01 Ask</b><small>Tell us what you need.</small></div>
+      <div class="journey-item"><b class="done">✓ 02 Understand</b><small>Get simple information.</small></div>
+      <div class="journey-item"><b>03 Choose</b><small>Pick the option that fits.</small></div>
+      <div class="journey-item"><b>04 Act</b><small>Take your next step.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="stats">
+    <div class="stat"><div class="num" data-target="5">0</div><p>Language choices</p></div>
+    <div class="stat"><div class="num" data-target="5">0</div><p>Support paths</p></div>
+    <div class="stat"><div class="num" data-target="4">0</div><p>Simple steps</p></div>
+    <div class="stat"><div class="num" data-target="1">0</div><p>Voice-first experience</p></div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="story">
+    <div class="story-card"><h2>When information becomes accessible, confidence grows. ❤️</h2><p>NariSetu is designed around a simple idea: a woman should not need English, technical knowledge, or someone beside her just to understand an opportunity that could change her life.</p></div>
+    <div class="quote">“I don't know where to start.”<br><br><span style="color:var(--pink)">Start with your voice.</span><br>NariSetu helps turn a question into a clear next step.</div>
+  </div>
+</section>
+
+<section class="section" id="help">
+  <div class="emergency"><div><h2>🆘 Need urgent help?</h2><p>If you are in immediate danger, contact your local emergency service or a trusted person. NariSetu can help you identify the kind of support you need.</p></div><button class="helpbtn" onclick="toast('Please contact your local emergency service or a trusted person.')">Get Help</button></div>
+</section>
+</main>
+
+<footer><h2>🌸 NariSetu AI</h2><p>Your Voice • Your Language • Your Opportunities</p><p>Designed for inclusion, confidence and access.</p></footer>
+
+<button class="chat-fab" id="chatFab" onclick="openChat()">💬</button>
+<div class="chat" id="chat">
+  <div class="chathead"><div><b>🌸 NariSetu AI</b><br><small>Ready to help</small></div><button class="close" onclick="closeChat()">✕</button></div>
+  <div class="messages" id="messages"><div class="msg bot">👋 Hello! Tell me what you need. You can type or use the 🎤 button.</div></div>
+  <div class="composer"><button class="mic" style="width:44px;height:44px" onclick="startVoice()">🎤</button><input id="input" placeholder="e.g. I need a job..." onkeydown="if(event.key==='Enter')send()"><button onclick="send()">➤</button></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const particles=document.getElementById('particles');
+for(let i=0;i<32;i++){let p=document.createElement('i');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(7+Math.random()*10)+'s';p.style.animationDelay=(-Math.random()*12)+'s';p.style.transform=`scale(${.5+Math.random()})`;particles.appendChild(p)}
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),2600)}
+function openChat(){document.getElementById('chat').classList.add('open');document.getElementById('chatFab').style.display='none';setTimeout(()=>document.getElementById('input').focus(),250)}
+function closeChat(){document.getElementById('chat').classList.remove('open');document.getElementById('chatFab').style.display='block'}
+function add(text,who){const m=document.getElementById('messages');const d=document.createElement('div');d.className='msg '+who;d.textContent=text;m.appendChild(d);m.scrollTop=m.scrollHeight}
+function quick(text){openChat();document.getElementById('input').value=text;send()}
+function answer(q){q=q.toLowerCase();if(q.includes('job')||q.includes('skill')||q.includes('career'))return'💼 Let’s start with your goal. Tell me what kind of work or skill you are interested in, and I can guide you to the next step.';if(q.includes('education')||q.includes('scholarship')||q.includes('college'))return'🎓 I can guide you through education and scholarship options. Tell me whether you are a student, looking for a scholarship, or looking for training.';if(q.includes('money')||q.includes('financial')||q.includes('loan'))return'💰 I can help you understand financial-support options. Tell me whether you need help for education, work, business, or family needs.';if(q.includes('women')||q.includes('support')||q.includes('safety'))return'🌷 You are not alone. I can help you identify women-support resources and explain what to do next in simple steps.';if(q.includes('near')||q.includes('help'))return'📍 I can help you figure out what type of service you need and what information to keep ready before visiting a service center.';if(q.includes('hello')||q.includes('hi'))return'🌸 Hello! I’m NariSetu. What would you like help with today?';return'🌸 I can help with Education, Jobs & Skills, Women Support, Financial Help, or finding the right service. Try saying: “I need a job.”'}
+function send(){const i=document.getElementById('input'),q=i.value.trim();if(!q)return;add(q,'user');i.value='';setTimeout(()=>{const a=answer(q);add(a,'bot');speak(a)},500)}
+function speak(text){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(text);u.lang=document.getElementById('language').value;u.rate=.92;speechSynthesis.cancel();speechSynthesis.speak(u)}
+function startVoice(){const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){toast('Voice input needs Google Chrome.');return}const r=new R();r.lang=document.getElementById('language').value;r.interimResults=false;r.continuous=false;const mic=document.getElementById('mic'),s=document.getElementById('voiceStatus');mic.classList.add('listening');s.textContent='🎧 Listening… speak now';toast('Listening…');r.start();r.onresult=e=>{const text=e.results[0][0].transcript;openChat();document.getElementById('input').value=text;send()};r.onerror=()=>toast('Please allow microphone access and try again.');r.onend=()=>{mic.classList.remove('listening');s.textContent='Tap to talk • I’m listening'}}
+document.getElementById('language').addEventListener('change',e=>toast('Language changed to '+e.target.options[e.target.selectedIndex].text))
+document.querySelectorAll('.num').forEach(el=>{const target=+el.dataset.target;let n=0;const step=Math.max(1,Math.ceil(target/25));const timer=setInterval(()=>{n+=step;if(n>=target){n=target;clearInterval(timer)}el.textContent=n+'+'},60)})
+</script>
+</body>
+</html>
