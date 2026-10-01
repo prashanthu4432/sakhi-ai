@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NariSetu AI - Your Bridge to a Brighter Future</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff1f8, #f0e9ff, #e9fff7);
+    color: #302050;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.35;
+    animation: float 8s infinite ease-in-out;
+}
+
+.circle1 {
+    width: 250px;
+    height: 250px;
+    background: #ff7eb3;
+    top: 5%;
+    left: -80px;
+}
+
+.circle2 {
+    width: 300px;
+    height: 300px;
+    background: #9d7cff;
+    right: -100px;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.circle3 {
+    width: 200px;
+    height: 200px;
+    background: #64e6b5;
+    bottom: 5%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-35px) scale(1.08);
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    box-shadow: 0 4px 20px rgba(80,40,100,0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff3f91, #7527d9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.logo h2 {
+    color: #7020a8;
+}
+
+.logo span {
+    color: #ff287e;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    color: #777;
+}
+
+@keyframes pulse {
+    0%,100% {
+        box-shadow: 0 0 0 0 rgba(255,40,126,0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px rgba(255,40,126,0);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #35235b;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff287e;
+    transform: translateY(-2px);
+}
+
+.language {
+    border: 2px solid #eadcf8;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: #55268d;
+    font-weight: bold;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 8%;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+    animation: slideLeft 1s ease;
+}
+
+.hero-text .tag {
+    display: inline-block;
+    background: #ffe1ef;
+    color: #d21c72;
+    padding: 9px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1;
+    color: #661a9d;
+}
+
+.hero h1 span {
+    color: #ff287e;
+}
+
+.hero h2 {
+    margin-top: 15px;
+    font-size: 28px;
+    color: #332054;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #625878;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ff71ae, #7c3aed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(110,35,150,0.25);
+    animation: heroFloat 4s infinite ease-in-out;
+}
+
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+}
+
+.woman {
+    font-size: 150px;
+    z-index: 2;
+}
+
+.flower {
+    position: absolute;
+    font-size: 35px;
+    animation: spinFloat 5s infinite ease-in-out;
+}
+
+.flower1 {
+    top: 25px;
+    left: 50px;
+}
+
+.flower2 {
+    right: 30px;
+    bottom: 80px;
+    animation-delay: 1s;
+}
+
+.flower3 {
+    left: 40px;
+    bottom: 40px;
+    animation-delay: 2s;
+}
+
+@keyframes heroFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes spinFloat {
+    0%,100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(15deg) translateY(-15px);
+    }
+}
+
+/* =========================
+   VOICE BUTTON
+========================= */
+
+.voice-section {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.voice-button {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: 7px solid #ffd2e8;
+    background: linear-gradient(135deg, #ff287e, #7225d8);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+
+    box-shadow: 0 10px 35px rgba(230,35,125,0.35);
+
+    transition: 0.3s;
+}
+
+.voice-button:hover {
+    transform: scale(1.1);
+}
+
+.voice-button.listening {
+    animation: listening 1s infinite;
+}
+
+@keyframes listening {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,40,126,0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 30px rgba(255,40,126,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,40,126,0);
+    }
+}
+
+.voice-text {
+    margin-top: 12px;
+    font-weight: bold;
+    color: #7a257d;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.section-title {
+    text-align: center;
+    margin: 80px 0 35px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    color: #5b168d;
+}
+
+.section-title p {
+    color: #777;
+    margin-top: 8px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 6%;
+}
+
+.card {
+    padding: 28px 20px;
+    border-radius: 25px;
+    min-height: 230px;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.7);
+}
+
+.card:hover {
+    transform: translateY(-12px) rotate(1deg);
+    box-shadow: 0 20px 35px rgba(60,30,90,0.15);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    right: -35px;
+    bottom: -35px;
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #655b70;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.card button {
+    margin-top: 15px;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: white;
+    background: #7225d8;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.education {
+    background: linear-gradient(135deg,#ffe0f0,#fff4fa);
+}
+
+.jobs {
+    background: linear-gradient(135deg,#dcecff,#eff7ff);
+}
+
+.women {
+    background: linear-gradient(135deg,#fff0cf,#fff9e8);
+}
+
+.money {
+    background: linear-gradient(135deg,#dff9e9,#f1fff7);
+}
+
+.help {
+    background: linear-gradient(135deg,#e8e0ff,#f8f4ff);
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how {
+    margin: 70px 6%;
+    padding: 45px;
+    border-radius: 35px;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(80,40,100,0.08);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#ff3d91,#7127d5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    animation: pulse 2.5s infinite;
+}
+
+.step h3 {
+    margin: 15px 0 8px;
+}
+
+/* =========================
+   CHAT BOX
+========================= */
+
+.chat-section {
+    max-width: 850px;
+    margin: 80px auto;
+    padding: 30px;
+}
+
+.chat-box {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(80,30,100,0.12);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#ff3c90,#7225d8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 20px 5px;
+}
+
+.message {
+    padding: 13px 18px;
+    border-radius: 20px;
+    max-width: 75%;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.bot {
+    background: #f3eaff;
+    color: #48256d;
+    border-bottom-left-radius: 5px;
+}
+
+.user {
+    background: linear-gradient(135deg,#ff3c90,#7527d9);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: 2px solid #eadcf8;
+    border-radius: 25px;
+    padding: 15px 20px;
+    outline: none;
+}
+
+.send {
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    background: #7225d8;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 80px;
+    padding: 45px 7%;
+    color: white;
+    background: linear-gradient(135deg,#32105e,#7225d8,#b41d72);
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 30px;
+}
+
+footer p {
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 1000px) {
+
+    .services {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .hero-visual {
+        width: 280px;
+        height: 280px;
+    }
+
+    .woman {
+        font-size: 100px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .how {
+        margin: 50px 5%;
+        padding: 25px;
+    }
+
+    .chat-section {
+        padding: 15px;
+    }
+
+    .logo small {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Animated background -->
+
+<div class="background">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+</div>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🌸
+        </div>
+
+        <div>
+            <h2>Nari<span>Setu</span> AI</h2>
+            <small>Your Bridge to a Brighter Future</small>
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#chat">Chat</a>
+
+        <select class="language" id="language">
+            <option value="en">🌐 English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ta">தமிழ்</option>
+            <option value="kn">ಕನ್ನಡ</option>
+        </select>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="tag">
+            🌸 Made for Every Woman
+        </div>
+
+        <h1>
+            Nari<span>Setu</span> AI
+        </h1>
+
+        <h2>
+            Your Bridge to a Brighter Future
+        </h2>
+
+        <p>
+            Ask questions, discover opportunities and understand
+            government services, jobs, education and support —
+            all in a simple language you understand.
+        </p>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="flower flower1">🌸</div>
+        <div class="flower flower2">🌺</div>
+        <div class="flower flower3">🌷</div>
+
+        <div class="woman">
+            👩‍💼
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VOICE
+========================= -->
+
+<section class="voice-section">
+
+    <button
+        class="voice-button"
+        id="voiceButton"
+        onclick="startVoice()">
+        🎤
+    </button>
+
+    <div class="voice-text" id="voiceText">
+        Tap to Talk to NariSetu
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<div class="section-title" id="services">
+
+    <h2>✨ Explore Services</h2>
+
+    <p>
+        Find the right support for your needs
+    </p>
+
+</div>
+
+
+<section class="services">
+
+    <div class="card education">
+
+        <div class="card-icon">🎓</div>
+
+        <h3>Education</h3>
+
+        <p>
+            Scholarships, college admissions,
+            skill training and educational opportunities.
+        </p>
+
+        <button onclick="serviceMessage('education')">
+            →
+        </button>
+
+    </div>
+
+
+    <div class="card jobs">
+
+        <div class="card-icon">💼</div>
+
+        <h3>Jobs & Skills</h3>
+
+        <p>
+            Discover job opportunities,
+            skill development programs and training.
+        </p>
+
+        <button onclick="serviceMessage('jobs')">
+            →
+        </button>
+
+    </div>
+
+
+    <div class="card women">
+
+        <div class="card-icon">👩‍🍼</div>
+
+        <h3>Women Support</h3>
+
+        <p>
+            Explore support programs,
+            safety resources and empowerment services.
+        </p>
+
+        <button onclick="serviceMessage('women')">
+            →
+        </button>
+
+    </div>
+
+
+    <div class="card money">
+
+        <div class="card-icon">💰</div>
+
+        <h3>Financial Help</h3>
+
+        <p>
+            Learn about financial assistance,
+            loans and support programs.
+        </p>
+
+        <button onclick="serviceMessage('money')">
+            →
+        </button>
+
+    </div>
+
+
+    <div class="card help">
+
+        <div class="card-icon">📍</div>
+
+        <h3>Find Help</h3>
+
+        <p>
+            Find nearby support centers,
+            services and useful resources.
+        </p>
+
+        <button onclick="serviceMessage('help')">
+            →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="how" id="how">
+
+    <div class="section-title" style="margin-top:0">
+
+        <h2>💜 How NariSetu Works</h2>
+
+        <p>
+            Three simple steps. No technical knowledge required.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>🎤 Ask</h3>
+
+            <p>
+                Speak or type your question.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>🤖 Understand</h3>
+
+            <p>
+                NariSetu understands what you need.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>✅ Get Help</h3>
+
+            <p>
+                Receive simple guidance and next steps.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CHAT
+========================= -->
+
+<section class="chat-section" id="chat">
+
+    <div class="chat-box">
+
+        <div class="chat-header">
+
+            <div class="chat-avatar">
+                🌸
+            </div>
+
+            <div>
+                <h3>NariSetu AI</h3>
+                <small>● Online • Ready to help</small>
+            </div>
+
+        </div>
+
+
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="message bot">
+
+                👋 Hello! I'm NariSetu.
+
+                <br><br>
+
+                You can ask me about education,
+                jobs, women support or financial help.
+
+            </div>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Type your question..."
+                onkeydown="handleEnter(event)"
+            >
+
+            <button
+                class="send"
+                onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>🌸 NariSetu AI</h2>
+
+    <p>
+        Your Voice • Your Language • Your Opportunities
+    </p>
+
+    <p>
+        Empowered Women • Stronger Communities • Brighter Future
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   CHAT SYSTEM
+========================= */
+
+function sendMessage() {
+
+    let input =
+        document.getElementById("userInput");
+
+    let text =
+        input.value.trim();
+
+    if(text === "") {
+        return;
+    }
+
+    addMessage(text, "user");
+
+    input.value = "";
+
+    setTimeout(function() {
+
+        let response =
+            getResponse(text);
+
+        addMessage(response, "bot");
+
+        speak(response);
+
+    }, 600);
+}
+
+
+function addMessage(text, type) {
+
+    let messages =
+        document.getElementById("chatMessages");
+
+    let message =
+        document.createElement("div");
+
+    message.className =
+        "message " + type;
+
+    message.innerText = text;
+
+    messages.appendChild(message);
+
+    messages.scrollTop =
+        messages.scrollHeight;
+}
+
+
+function getResponse(text) {
+
+    text = text.toLowerCase();
+
+    if(
+        text.includes("education") ||
+        text.includes("education") ||
+        text.includes("college") ||
+        text.includes("scholarship")
+    ) {
+
+        return "🎓 I can help you explore education opportunities, scholarships, college options and skill training. Tell me what you are looking for.";
+
+    }
+
+
+    if(
+        text.includes("job") ||
+        text.includes("work") ||
+        text.includes("career")
+    ) {
+
+        return "💼 I can help you explore jobs, career opportunities and skill-development programs for women.";
+
+    }
+
+
+    if(
+        text.includes("women") ||
+        text.includes("support") ||
+        text.includes("safety")
+    ) {
+
+        return "👩 NariSetu can guide you toward women-support resources, safety services and empowerment opportunities.";
+
+    }
+
+
+    if(
+        text.includes("money") ||
+        text.includes("loan") ||
+        text.includes("financial")
+    ) {
+
+        return "💰 I can help you understand financial-support options, loans and assistance programs. Tell me what kind of help you need.";
+
+    }
+
+
+    if(
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("namaste")
+    ) {
+
+        return "🌸 Hello! Welcome to NariSetu AI. How can I help you today?";
+
+    }
+
+
+    return "🌸 I'm here to help. You can ask me about education, jobs, women support, financial assistance or government services.";
+
+}
+
+
+function handleEnter(event) {
+
+    if(event.key === "Enter") {
+        sendMessage();
+    }
+
+}
+
+
+/* =========================
+   SERVICE BUTTONS
+========================= */
+
+function serviceMessage(service) {
+
+    let questions = {
+
+        education:
+        "I want to know about education opportunities.",
+
+        jobs:
+        "I want to find job and skill opportunities.",
+
+        women:
+        "I need women support information.",
+
+        money:
+        "I need financial assistance information.",
+
+        help:
+        "I want to find help near me."
+
+    };
+
+    document.getElementById("userInput").value =
+        questions[service];
+
+    sendMessage();
+
+}
+
+
+/* =========================
+   VOICE RECOGNITION
+========================= */
+
+function startVoice() {
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if(!SpeechRecognition) {
+
+        alert(
+            "Voice recognition is not supported in this browser. Please try Google Chrome."
+        );
+
+        return;
+    }
+
+
+    const recognition =
+        new SpeechRecognition();
+
+    recognition.lang =
+        getVoiceLanguage();
+
+    recognition.continuous = false;
+
+    recognition.interimResults = false;
+
+
+    const button =
+        document.getElementById("voiceButton");
+
+    const voiceText =
+        document.getElementById("voiceText");
+
+
+    button.classList.add("listening");
+
+    voiceText.innerText =
+        "🎧 Listening... Speak now";
+
+
+    recognition.start();
+
+
+    recognition.onresult =
+        function(event) {
+
+            let text =
+                event.results[0][0].transcript;
+
+            document.getElementById("userInput").value =
+                text;
+
+            button.classList.remove("listening");
+
+            voiceText.innerText =
+                "Tap to Talk to NariSetu";
+
+            sendMessage();
+
+        };
+
+
+    recognition.onerror =
+        function() {
+
+            button.classList.remove("listening");
+
+            voiceText.innerText =
+                "Tap to Talk to NariSetu";
+
+        };
+
+
+    recognition.onend =
+        function() {
+
+            button.classList.remove("listening");
+
+            voiceText.innerText =
+                "Tap to Talk to NariSetu";
+
+        };
+
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+function getVoiceLanguage() {
+
+    let language =
+        document.getElementById("language").value;
+
+    if(language === "te")
+        return "te-IN";
+
+    if(language === "hi")
+        return "hi-IN";
+
+    if(language === "ta")
+        return "ta-IN";
+
+    if(language === "kn")
+        return "kn-IN";
+
+    return "en-IN";
+}
+
+
+/* =========================
+   TEXT TO SPEECH
+========================= */
+
+function speak(text) {
+
+    if(!("speechSynthesis" in window)) {
+        return;
+    }
+
+    let speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang =
+        getVoiceLanguage();
+
+    speech.rate = 0.9;
+
+    window.speechSynthesis.cancel();
+
+    window.speechSynthesis.speak(speech);
+
+}
+
+
+/* =========================
+   LANGUAGE CHANGE
+========================= */
+
+document
+.getElementById("language")
+.addEventListener("change", function() {
+
+    let selected =
+        this.options[this.selectedIndex].text;
+
+    addMessage(
+        "🌐 Language changed to " + selected,
+        "bot"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
